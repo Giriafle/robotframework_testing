@@ -1,0 +1,1192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.4 (Python 3.6.3 on darwin)" generated="20181206 14:51:35.006">
+<suite id="s1" name="Testing" source="/Users/andrej/ML/simbirsoft/peter-service/peter_service_test/services/testing.robot">
+<test id="s1-t1" name="Check File DB">
+<kw name="Get Connection And Cursor DB" type="setup">
+<kw name="Open Connection" library="DBRequests">
+<doc>Initiates connection to a database and makes a cursor.</doc>
+<assign>
+<var>${db_connection}</var>
+</assign>
+<msg timestamp="20181206 14:51:35.300" level="INFO">${db_connection} = &lt;sqlite3.Connection object at 0x111db6810&gt;</msg>
+<status status="PASS" starttime="20181206 14:51:35.295" endtime="20181206 14:51:35.300"></status>
+</kw>
+<kw name="Get Cursor" library="DBRequests">
+<doc>Initiates connection to a database and makes a cursor.</doc>
+<arguments>
+<arg>${db_connection}</arg>
+</arguments>
+<assign>
+<var>${db_cursor}</var>
+</assign>
+<msg timestamp="20181206 14:51:35.301" level="INFO">${db_cursor} = &lt;sqlite3.Cursor object at 0x111ed2d50&gt;</msg>
+<status status="PASS" starttime="20181206 14:51:35.300" endtime="20181206 14:51:35.301"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${db_connection}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:35.301" level="INFO">${db_connection} = &lt;sqlite3.Connection object at 0x111db6810&gt;</msg>
+<status status="PASS" starttime="20181206 14:51:35.301" endtime="20181206 14:51:35.301"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${db_cursor}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:35.302" level="INFO">${db_cursor} = &lt;sqlite3.Cursor object at 0x111ed2d50&gt;</msg>
+<status status="PASS" starttime="20181206 14:51:35.302" endtime="20181206 14:51:35.302"></status>
+</kw>
+<status status="PASS" starttime="20181206 14:51:35.295" endtime="20181206 14:51:35.302"></status>
+</kw>
+<kw name="Check File" library="DBRequests">
+<doc>Checking existence a database.</doc>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20181206 14:51:35.303" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20181206 14:51:35.302" endtime="20181206 14:51:35.303"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${result}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:35.303" endtime="20181206 14:51:35.303"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${result}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:35.303" endtime="20181206 14:51:35.304"></status>
+</kw>
+<kw name="Close Db" library="DBRequests" type="teardown">
+<doc>Committing and closing the database.</doc>
+<arguments>
+<arg>${db_connection}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:35.304" endtime="20181206 14:51:35.306"></status>
+</kw>
+<tags>
+<tag>db</tag>
+<tag>smoke</tag>
+</tags>
+<status status="PASS" starttime="20181206 14:51:35.294" endtime="20181206 14:51:35.306" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Check Connection to API">
+<kw name="Get Connection And Cursor DB" type="setup">
+<kw name="Open Connection" library="DBRequests">
+<doc>Initiates connection to a database and makes a cursor.</doc>
+<assign>
+<var>${db_connection}</var>
+</assign>
+<msg timestamp="20181206 14:51:35.308" level="INFO">${db_connection} = &lt;sqlite3.Connection object at 0x111db6730&gt;</msg>
+<status status="PASS" starttime="20181206 14:51:35.307" endtime="20181206 14:51:35.308"></status>
+</kw>
+<kw name="Get Cursor" library="DBRequests">
+<doc>Initiates connection to a database and makes a cursor.</doc>
+<arguments>
+<arg>${db_connection}</arg>
+</arguments>
+<assign>
+<var>${db_cursor}</var>
+</assign>
+<msg timestamp="20181206 14:51:35.308" level="INFO">${db_cursor} = &lt;sqlite3.Cursor object at 0x111ed2ea0&gt;</msg>
+<status status="PASS" starttime="20181206 14:51:35.308" endtime="20181206 14:51:35.308"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${db_connection}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:35.309" level="INFO">${db_connection} = &lt;sqlite3.Connection object at 0x111db6730&gt;</msg>
+<status status="PASS" starttime="20181206 14:51:35.309" endtime="20181206 14:51:35.309"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${db_cursor}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:35.309" level="INFO">${db_cursor} = &lt;sqlite3.Cursor object at 0x111ed2ea0&gt;</msg>
+<status status="PASS" starttime="20181206 14:51:35.309" endtime="20181206 14:51:35.309"></status>
+</kw>
+<status status="PASS" starttime="20181206 14:51:35.307" endtime="20181206 14:51:35.309"></status>
+</kw>
+<kw name="Check Connection" library="Api">
+<doc>Checking connection to API.</doc>
+<msg timestamp="20181206 14:51:35.327" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<status status="PASS" starttime="20181206 14:51:35.309" endtime="20181206 14:51:35.334"></status>
+</kw>
+<kw name="Close Db" library="DBRequests" type="teardown">
+<doc>Committing and closing the database.</doc>
+<arguments>
+<arg>${db_connection}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:35.335" endtime="20181206 14:51:35.335"></status>
+</kw>
+<tags>
+<tag>api</tag>
+<tag>smoke</tag>
+</tags>
+<status status="PASS" starttime="20181206 14:51:35.306" endtime="20181206 14:51:35.335" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Add Services To Users With Positive Balance">
+<kw name="Get Connection And Cursor DB" type="setup">
+<kw name="Open Connection" library="DBRequests">
+<doc>Initiates connection to a database and makes a cursor.</doc>
+<assign>
+<var>${db_connection}</var>
+</assign>
+<msg timestamp="20181206 14:51:35.337" level="INFO">${db_connection} = &lt;sqlite3.Connection object at 0x11045c490&gt;</msg>
+<status status="PASS" starttime="20181206 14:51:35.337" endtime="20181206 14:51:35.337"></status>
+</kw>
+<kw name="Get Cursor" library="DBRequests">
+<doc>Initiates connection to a database and makes a cursor.</doc>
+<arguments>
+<arg>${db_connection}</arg>
+</arguments>
+<assign>
+<var>${db_cursor}</var>
+</assign>
+<msg timestamp="20181206 14:51:35.338" level="INFO">${db_cursor} = &lt;sqlite3.Cursor object at 0x111f3f110&gt;</msg>
+<status status="PASS" starttime="20181206 14:51:35.337" endtime="20181206 14:51:35.338"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${db_connection}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:35.338" level="INFO">${db_connection} = &lt;sqlite3.Connection object at 0x11045c490&gt;</msg>
+<status status="PASS" starttime="20181206 14:51:35.338" endtime="20181206 14:51:35.338"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${db_cursor}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:35.338" level="INFO">${db_cursor} = &lt;sqlite3.Cursor object at 0x111f3f110&gt;</msg>
+<status status="PASS" starttime="20181206 14:51:35.338" endtime="20181206 14:51:35.338"></status>
+</kw>
+<status status="PASS" starttime="20181206 14:51:35.336" endtime="20181206 14:51:35.339"></status>
+</kw>
+<kw name="Get Client With Positive Balance" library="DBRequests">
+<doc>This function gets values from a database: it selects users with a positive balance.</doc>
+<arguments>
+<arg>${db_cursor}</arg>
+</arguments>
+<assign>
+<var>${client_id}</var>
+<var>${client_balance}</var>
+</assign>
+<msg timestamp="20181206 14:51:35.343" level="INFO">${client_id} = 3</msg>
+<msg timestamp="20181206 14:51:35.343" level="INFO">${client_balance} = 3.5</msg>
+<status status="PASS" starttime="20181206 14:51:35.339" endtime="20181206 14:51:35.344"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${client_id} == None</arg>
+<arg>Insert User</arg>
+<arg>${db_connection}</arg>
+<arg>${db_cursor}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:35.344" endtime="20181206 14:51:35.344"></status>
+</kw>
+<kw name="Get Hook Services" library="Api">
+<doc>This function gets user's hooked services from API.</doc>
+<arguments>
+<arg>${client_id}</arg>
+</arguments>
+<assign>
+<var>${hooked_services}</var>
+</assign>
+<msg timestamp="20181206 14:51:35.346" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:35.353" level="INFO">${hooked_services} = [1, 2, 3, 4]</msg>
+<status status="PASS" starttime="20181206 14:51:35.344" endtime="20181206 14:51:35.354"></status>
+</kw>
+<kw name="Get All Services" library="Api">
+<doc>This function gets information about all possible services from API.</doc>
+<assign>
+<var>${all_services}</var>
+</assign>
+<msg timestamp="20181206 14:51:35.356" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:35.363" level="INFO">${all_services} = [1, 2, 3, 4, 5]</msg>
+<status status="PASS" starttime="20181206 14:51:35.354" endtime="20181206 14:51:35.363"></status>
+</kw>
+<kw name="Find Unhooked Service" library="Api">
+<doc>This function finds first unhooked services and it cost.</doc>
+<arguments>
+<arg>${hooked_services}</arg>
+<arg>${all_services}</arg>
+</arguments>
+<assign>
+<var>${service_id}</var>
+<var>${service_cost}</var>
+</assign>
+<msg timestamp="20181206 14:51:35.365" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:35.371" level="INFO">${service_id} = 5</msg>
+<msg timestamp="20181206 14:51:35.371" level="INFO">${service_cost} = 0.05</msg>
+<status status="PASS" starttime="20181206 14:51:35.363" endtime="20181206 14:51:35.371"></status>
+</kw>
+<kw name="Add Services" library="Api">
+<doc>This function adds services to users with API.</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:35.374" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<status status="PASS" starttime="20181206 14:51:35.371" endtime="20181206 14:51:35.382"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>1 min</arg>
+<arg>1 sec</arg>
+<arg>Wait For Adding</arg>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:35.386" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:35.394" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:35.384" endtime="20181206 14:51:35.394"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:35.395" endtime="20181206 14:51:35.395"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:35.395" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:35.395" endtime="20181206 14:51:35.395"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:35.383" endtime="20181206 14:51:35.396"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:36.402" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:36.415" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:36.398" endtime="20181206 14:51:36.415"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:36.415" endtime="20181206 14:51:36.416"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:36.416" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:36.416" endtime="20181206 14:51:36.416"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:36.397" endtime="20181206 14:51:36.417"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:37.424" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:37.436" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:37.420" endtime="20181206 14:51:37.436"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:37.436" endtime="20181206 14:51:37.437"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:37.437" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:37.437" endtime="20181206 14:51:37.438"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:37.419" endtime="20181206 14:51:37.438"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:38.445" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:38.457" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:38.441" endtime="20181206 14:51:38.457"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:38.457" endtime="20181206 14:51:38.457"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:38.458" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:38.458" endtime="20181206 14:51:38.458"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:38.440" endtime="20181206 14:51:38.458"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:39.465" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:39.476" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:39.460" endtime="20181206 14:51:39.476"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:39.477" endtime="20181206 14:51:39.477"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:39.478" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:39.477" endtime="20181206 14:51:39.478"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:39.459" endtime="20181206 14:51:39.478"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:40.484" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:40.497" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:40.480" endtime="20181206 14:51:40.497"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:40.497" endtime="20181206 14:51:40.498"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:40.499" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:40.498" endtime="20181206 14:51:40.499"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:40.479" endtime="20181206 14:51:40.500"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:41.503" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:41.510" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:41.501" endtime="20181206 14:51:41.510"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:41.511" endtime="20181206 14:51:41.511"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:41.512" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:41.511" endtime="20181206 14:51:41.512"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:41.500" endtime="20181206 14:51:41.512"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:42.519" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:42.533" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:42.515" endtime="20181206 14:51:42.533"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:42.533" endtime="20181206 14:51:42.535"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:42.535" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:42.535" endtime="20181206 14:51:42.536"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:42.514" endtime="20181206 14:51:42.536"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:43.542" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:43.553" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:43.538" endtime="20181206 14:51:43.553"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:43.553" endtime="20181206 14:51:43.554"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:43.555" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:43.554" endtime="20181206 14:51:43.555"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:43.537" endtime="20181206 14:51:43.555"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:44.562" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:44.577" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:44.557" endtime="20181206 14:51:44.577"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:44.578" endtime="20181206 14:51:44.578"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:44.578" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:44.578" endtime="20181206 14:51:44.578"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:44.556" endtime="20181206 14:51:44.578"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:45.583" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:45.590" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:45.580" endtime="20181206 14:51:45.590"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:45.591" endtime="20181206 14:51:45.591"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:45.591" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:45.591" endtime="20181206 14:51:45.591"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:45.579" endtime="20181206 14:51:45.592"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:46.597" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:46.610" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:46.593" endtime="20181206 14:51:46.610"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:46.610" endtime="20181206 14:51:46.610"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:46.611" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:46.611" endtime="20181206 14:51:46.611"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:46.592" endtime="20181206 14:51:46.611"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:47.618" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:47.629" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:47.614" endtime="20181206 14:51:47.630"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:47.630" endtime="20181206 14:51:47.631"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:47.631" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:47.631" endtime="20181206 14:51:47.631"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:47.613" endtime="20181206 14:51:47.632"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:48.638" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:48.649" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:48.634" endtime="20181206 14:51:48.650"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:48.650" endtime="20181206 14:51:48.650"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:48.651" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:48.650" endtime="20181206 14:51:48.651"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:48.633" endtime="20181206 14:51:48.651"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:49.659" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:49.669" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:49.655" endtime="20181206 14:51:49.669"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:49.670" endtime="20181206 14:51:49.670"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:49.671" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:49.670" endtime="20181206 14:51:49.671"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:49.654" endtime="20181206 14:51:49.671"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:50.680" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:50.690" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:50.675" endtime="20181206 14:51:50.690"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:50.690" endtime="20181206 14:51:50.691"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:50.691" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:50.691" endtime="20181206 14:51:50.692"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:50.674" endtime="20181206 14:51:50.692"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:51.699" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:51.710" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:51.695" endtime="20181206 14:51:51.711"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:51.711" endtime="20181206 14:51:51.711"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:51.712" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:51.712" endtime="20181206 14:51:51.712"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:51.694" endtime="20181206 14:51:51.712"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:52.720" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:52.733" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:52.716" endtime="20181206 14:51:52.733"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:52.734" endtime="20181206 14:51:52.736"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:52.736" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:52.736" endtime="20181206 14:51:52.737"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:52.714" endtime="20181206 14:51:52.737"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:53.749" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:53.765" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:53.740" endtime="20181206 14:51:53.765"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:53.766" endtime="20181206 14:51:53.766"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:53.767" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:53.766" endtime="20181206 14:51:53.767"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:53.739" endtime="20181206 14:51:53.767"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:54.774" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:54.786" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:54.770" endtime="20181206 14:51:54.786"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:54.786" endtime="20181206 14:51:54.786"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:54.787" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:54.787" endtime="20181206 14:51:54.787"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:54.768" endtime="20181206 14:51:54.787"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:55.793" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:55.803" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:55.789" endtime="20181206 14:51:55.804"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:55.804" endtime="20181206 14:51:55.805"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:55.805" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:55.805" endtime="20181206 14:51:55.805"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:55.788" endtime="20181206 14:51:55.806"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:56.812" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:56.822" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:56.808" endtime="20181206 14:51:56.822"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:56.823" endtime="20181206 14:51:56.824"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:56.825" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:56.824" endtime="20181206 14:51:56.825"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:56.807" endtime="20181206 14:51:56.825"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:57.832" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:57.839" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:57.827" endtime="20181206 14:51:57.839"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:57.839" endtime="20181206 14:51:57.839"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:57.840" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:57.839" endtime="20181206 14:51:57.840"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:57.826" endtime="20181206 14:51:57.840"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:58.846" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:58.857" level="INFO">${response} = False</msg>
+<status status="PASS" starttime="20181206 14:51:58.842" endtime="20181206 14:51:58.858"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:58.858" endtime="20181206 14:51:58.859"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20181206 14:51:58.860" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20181206 14:51:58.859" endtime="20181206 14:51:58.860"></status>
+</kw>
+<status status="FAIL" starttime="20181206 14:51:58.841" endtime="20181206 14:51:58.860"></status>
+</kw>
+<kw name="Wait For Adding">
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<kw name="Find Service In Hook Services" library="Api">
+<doc>This function checks that the new service is hooked (gets it from API).</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${service_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20181206 14:51:59.866" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20181206 14:51:59.877" level="INFO">${response} = True</msg>
+<status status="PASS" starttime="20181206 14:51:59.862" endtime="20181206 14:51:59.877"></status>
+</kw>
+<kw name="Convert To Boolean" library="BuiltIn">
+<doc>Converts the given item to Boolean true or false.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:59.878" endtime="20181206 14:51:59.878"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:59.879" endtime="20181206 14:51:59.879"></status>
+</kw>
+<status status="PASS" starttime="20181206 14:51:59.861" endtime="20181206 14:51:59.879"></status>
+</kw>
+<status status="PASS" starttime="20181206 14:51:35.383" endtime="20181206 14:51:59.879"></status>
+</kw>
+<kw name="Get Balance" library="DBRequests">
+<doc>The function select user's balance with his id from the database. The pending request is a tuple, which contains</doc>
+<arguments>
+<arg>${client_id}</arg>
+<arg>${db_cursor}</arg>
+</arguments>
+<assign>
+<var>${new_balance_from_db}</var>
+</assign>
+<msg timestamp="20181206 14:51:59.880" level="INFO">${new_balance_from_db} = 3.5</msg>
+<status status="PASS" starttime="20181206 14:51:59.879" endtime="20181206 14:51:59.880"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${client_balance} - ${service_cost}</arg>
+</arguments>
+<assign>
+<var>${calculated_balance}</var>
+</assign>
+<msg timestamp="20181206 14:51:59.881" level="INFO">${calculated_balance} = 3.45</msg>
+<status status="PASS" starttime="20181206 14:51:59.880" endtime="20181206 14:51:59.881"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${new_balance_from_db}</arg>
+<arg>${calculated_balance}</arg>
+<arg>New client's balance from the database is not equal client's calculated balance</arg>
+</arguments>
+<msg timestamp="20181206 14:51:59.882" level="FAIL">New client's balance from the database is not equal client's calculated balance: 3.5 != 3.45</msg>
+<status status="FAIL" starttime="20181206 14:51:59.881" endtime="20181206 14:51:59.882"></status>
+</kw>
+<kw name="Close Db" library="DBRequests" type="teardown">
+<doc>Committing and closing the database.</doc>
+<arguments>
+<arg>${db_connection}</arg>
+</arguments>
+<status status="PASS" starttime="20181206 14:51:59.882" endtime="20181206 14:51:59.882"></status>
+</kw>
+<doc>Test adds services to user with positive balance or create such user and add it to him</doc>
+<tags>
+<tag>api</tag>
+<tag>db</tag>
+</tags>
+<status status="FAIL" starttime="20181206 14:51:35.336" endtime="20181206 14:51:59.883" critical="yes">New client's balance from the database is not equal client's calculated balance: 3.5 != 3.45</status>
+</test>
+<status status="FAIL" starttime="20181206 14:51:35.010" endtime="20181206 14:51:59.885"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1">Critical Tests</stat>
+<stat pass="2" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="1">api</stat>
+<stat pass="1" fail="1">db</stat>
+<stat pass="2" fail="0">smoke</stat>
+</tag>
+<suite>
+<stat pass="2" fail="1" id="s1" name="Testing">Testing</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
