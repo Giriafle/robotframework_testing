@@ -1,0 +1,8 @@
+.DS_Store
+services/__pycache__
+services/.DS_Store
+services/library/__pycache__
+services/library/.DS_Store
+services/results/.DS_Store
+web/.DS_Store
+.idea
